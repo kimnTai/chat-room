@@ -1,0 +1,26 @@
+@import './root';
+@import './reset';
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: var(--blue);
+}
+
+.icon {
+  &:hover {
+    color: var(--violet);
+  }
+}
+.avatar-wrapper {
+  border-radius: 50%;
+  overflow: hidden;
+}
