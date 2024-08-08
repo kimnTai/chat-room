@@ -1,22 +1,14 @@
+import { mockList } from '@/constant';
 import { createGlobalState } from '@vueuse/core';
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 
 export const useMessageStore = createGlobalState(() => {
   const { userId } = useUserStore();
 
-  const message = ref([
-    {
-      userId: 0,
-      message: 'Hey anhat!',
-    },
-    {
-      userId: 1,
-      message: 'what is going on?',
-    },
-  ]);
+  const message = reactive<MessageItem[]>(mockList);
 
   const sendMessage = async (params: { message: string }) => {
-    message.value.push({ userId: userId.value, message: params.message });
+    message.push({ userId: userId.value, message: params.message });
   };
 
   return { message, sendMessage };

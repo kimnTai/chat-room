@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useMessageStore, useUserStore } from '@/store';
+import { getAssetsFile } from '@/utils';
 
 const { message } = useMessageStore();
 const { isCurrentUser } = useUserStore();
@@ -13,7 +14,14 @@ const { isCurrentUser } = useUserStore();
         :class="[isCurrentUser(item.userId) ? 'message-right' : 'message-left']"
       >
         <div class="avatar-wrapper avatar-small">
-          <img src="@/assets/icon_1.png" alt="" />
+          <img
+            :src="
+              getAssetsFile(
+                isCurrentUser(item.userId) ? 'icon_2.png' : 'icon_1.png'
+              )
+            "
+            alt=""
+          />
         </div>
         <div
           class="bubble"

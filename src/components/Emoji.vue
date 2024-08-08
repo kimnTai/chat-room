@@ -2,12 +2,11 @@
 import { useToggle } from '@vueuse/core';
 
 import FaLaugh from '@/assets/FaLaugh.vue';
+import { emojiList } from '@/constant';
 import { useInputStore } from '@/store';
 
 const [value, toggle] = useToggle();
 const { add } = useInputStore();
-
-const emojiList = ['😄', '😀', '😂', '😭', '😍', '🤮', '🤑', '😖', '😷'];
 </script>
 
 <template>

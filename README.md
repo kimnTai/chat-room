@@ -1,5 +1,15 @@
 # chat-room
 
+### 安裝
+
+Node.js 版本建議為：`20` 以上
+
+### 取得專案
+
+```bash
+git clone https://github.com/kimnTai/chat-room.git
+```
+
 ### 安裝套件
 
 ```bash

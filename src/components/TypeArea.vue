@@ -7,11 +7,6 @@ import ButtonAdd from './ButtonAdd.vue';
 const { sendMessage } = useMessageStore();
 const { inputValue, clear } = useInputStore();
 
-onKeyStroke('Enter', (e) => {
-  e.preventDefault();
-  onSendMessage();
-});
-
 const onSendMessage = async () => {
   if (!inputValue.value) return;
 
@@ -19,6 +14,11 @@ const onSendMessage = async () => {
 
   clear();
 };
+
+onKeyStroke('Enter', (e) => {
+  e.preventDefault();
+  onSendMessage();
+});
 </script>
 
 <template>
@@ -60,7 +60,6 @@ const onSendMessage = async () => {
 
 .button-send {
   background-color: #fff;
-  margin-left: auto;
   width: 65px;
   color: var(--violet);
   font-weight: bold;

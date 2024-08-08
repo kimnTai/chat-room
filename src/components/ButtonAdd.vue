@@ -35,6 +35,7 @@ onClickOutside(target, () => {
   display: flex;
   align-items: center;
   position: relative;
+  margin: 0 auto;
 }
 
 .others {
@@ -48,12 +49,14 @@ onClickOutside(target, () => {
   border-radius: 999px;
   box-shadow: 0 0 25px -5px lightgray;
   transition: 0.3s all ease-out;
+
   .icon {
     font-size: 20px;
   }
-  .image-button {
-    margin: 0 25px;
-  }
+}
+
+.image-button {
+  margin: 0 25px;
 }
 
 .others-show {
