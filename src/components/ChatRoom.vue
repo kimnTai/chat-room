@@ -1,9 +1,23 @@
 <script setup lang="ts">
 import { useMessageStore, useUserStore } from '@/store';
 import { getAssetsFile } from '@/utils';
+import { nextTick, ref, watch } from 'vue';
 
 const { message } = useMessageStore();
 const { isCurrentUser } = useUserStore();
+const messageEndRef = ref<HTMLElement | null>(null);
+
+watch(
+  () => message.length,
+  () => {
+    nextTick(() => {
+      messageEndRef.value?.scrollIntoView({ behavior: 'smooth' });
+    });
+  },
+  {
+    immediate: true,
+  }
+);
 </script>
 
 <template>
@@ -31,6 +45,7 @@ const { isCurrentUser } = useUserStore();
         </div>
       </div>
     </template>
+    <div ref="messageEndRef"></div>
   </div>
 </template>
 
